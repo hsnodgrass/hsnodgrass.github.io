@@ -1,0 +1,34 @@
+texture:
+  title: Heston Snodgrass
+  tagline: Doer of the DevOps
+  date_format: "%b %-d, %Y"
+  social_links:
+    github: hsnodgrass
+    linkedin: in/hsnodgrass
+  style: black
+  showPicker: false
+  showNav: true
+  navigation:
+    - title: Blog
+      url: "/blog"
+    - title: Resume
+      url: "/resume"
+baseurl: "/"
+url: "https://hsnodgrass.github.io"
+github_username: hsnodgrass
+lsi: false
+safe: true
+source: .
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+theme: texture
+#remote_theme: thelehhman/texture
+plugins:
+  - jekyll-feed
+
