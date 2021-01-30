@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-gem "minima", "~> 2.0"
 gem "github-pages", "~> 211", group: :jekyll_plugins
 gem "texture"
 group :jekyll_plugins do

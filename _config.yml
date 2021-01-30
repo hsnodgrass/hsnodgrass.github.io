@@ -1,18 +1,10 @@
-texture:
-  title: Heston Snodgrass
-  tagline: Doer of the DevOps
-  date_format: "%b %-d, %Y"
-  social_links:
-    github: hsnodgrass
-    linkedin: in/hsnodgrass
-  style: black
-  showPicker: false
-  showNav: true
-  navigation:
-    - title: Blog
-      url: "/blog"
-    - title: Resume
-      url: "/resume"
+title: Heston Snodgrass
+author: hsnodgrass
+email: hsnodgrass3@gmail.com
+description: >
+  Personal site for Heston Snodgrass. I enjoy coding, systems
+  administration, the DevOps, site reliability, information
+  security, and some normal stuff too.
 baseurl: "/"
 url: "https://hsnodgrass.github.io"
 github_username: hsnodgrass
@@ -28,7 +20,17 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 theme: texture
-#remote_theme: thelehhman/texture
-plugins:
-  - jekyll-feed
+remote_theme: thelehhman/texture
+permalink: /posts/:title/
+texture:
+  title: Heston Snodgrass
+  tagline: Coder, SysAd, DevOps, and some InfoSec
+  date_format: "%b %-d, %Y"
+  social_links:
+    github: hsnodgrass
+    linkedin: in/hsnodgrass
+  style:
+    - black
+  showPicker: false
+  showNav: false
 

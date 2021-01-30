@@ -268,7 +268,6 @@ DEPENDENCIES
   github-pages (~> 211)
   jekyll-feed (~> 0.6)
   kramdown-parser-gfm
-  minima (~> 2.0)
   texture
   tzinfo (~> 1.2)
   tzinfo-data
