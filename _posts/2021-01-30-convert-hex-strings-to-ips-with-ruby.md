@@ -1,11 +1,19 @@
 ---
-layout: post
-title: "Converting Hex Strings to IP Addresses with Ruby"
+title: Converting Hex Strings to IP Addresses with Ruby
+author: Heston Snodgrass
 date: 2021-01-30 17:00:00 -0700
-catagories: ruby IPv4 IPv6 linux
+catagories: [Ruby]
+tags: [ipv4, linux, socket, hexidecimal, ruby]
+math: true
+mermaid: true
 ---
 
-## TL;DR
+This past week I found myself wanting to parse `/proc/net/tcp` using pure Ruby. Specifically, I
+wanted to convert parts of the socket information, specifically the IP and port, to a
+human-readable form. IP addresses and ports are represented in `/proc/net/tcp` as hexidecimal
+strings and I had no idea how to decode them to be human readable.
+
+### TL;DR
 
 ```ruby
 # Decode a hex string representation of an IPv4 address
@@ -15,24 +23,18 @@ catagories: ruby IPv4 IPv6 linux
 "<hex port string>".to_i(16)
 ```
 
-## The problem
-
-This past week I found myself wanting to parse `/proc/net/tcp` using pure Ruby. Part of what I
-wanted to do was convert part the socket information, specifically the IP and port, to a
-human-readable form. IP addresses and ports are represented in `/proc/net/tcp` as hexidecimal
-strings and I had no idea how to decode them to be human readable.
-
 ## The explanation
 
-As with all issues that stump me while coding, I immediately googled it. I found a brief post on
-StackOverflow that had some code that worked with minimal tweaking. I would give credit where
-credit is due, but alas the link I found is gone with my browser history. One thing the post 
-didn't really do is explain things, so I had to find out why the code works.
+As with all issues that stump me while coding, I immediately googled it. I found a brief [post on
+StackOverflow](https://stackoverflow.com/questions/43855030/how-to-manually-convert-an-integer-into-an-ip-address-in-ruby)
+that had some code that worked for converting integers to IP addresses, but not the hex to integers.
+Since there was a gap between what I wanted to do and what that code does, I had to figure out
+how to convert a hex string into an integer, then figure out why that code worked.
 
-IP addresses are nothing but 32-bit unsigned integers, when you get around to it. So, the first
+[IPv4 addresses]((https://en.wikipedia.org/wiki/IPv4)) are really just 32-bit integers. So, the first
 thing that needs to be done when decoding the hexidecimal representation of the IP is to convert
 it to it's native form. In Ruby, this is silly easy because the `.to_i` method allows you to pass
-a [radix](https://en.wikipedia.org/wiki/Radix) as a parameter. Since hexidecimal is `base 16`,
+a [radix](https://en.wikipedia.org/wiki/Radix) as a parameter. Since hexidecimal is *base 16*,
 we can get a numeral representation of hexidecimal string like so:
 
 ```ruby

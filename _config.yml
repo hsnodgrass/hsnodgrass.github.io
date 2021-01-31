@@ -1,36 +1,143 @@
+theme: jekyll-theme-chirpy
+
 title: Heston Snodgrass
-author: hsnodgrass
+tagline: Coding, SysAd, the DevOps, and some InfoSec
+author: Heston Snodgrass
 email: hsnodgrass3@gmail.com
 description: >
   Personal site for Heston Snodgrass. I enjoy coding, systems
   administration, the DevOps, site reliability, information
   security, and some normal stuff too.
-show_excerpts: true
-baseurl: "/"
-url: "https://hsnodgrass.github.io"
-github_username: hsnodgrass
-lsi: false
-safe: true
-source: .
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-markdown: kramdown
+
+url: "https://hsnodgrass.com"
+
+github:
+  username: hsnodgrass
+social:
+  name: Heston Snodgrass
+  email: hsnodgrass3@gmail.com
+  links:
+    - https://www.linkedin.com/in/hsnodgrass
+
+timezone: America/Phoenix
+
+theme_mode: dark
+
+avatar: "assets/img/avatar/avatar.jpg"
+
+toc: false
+
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
-remote_theme: thelehhman/texture
-permalink: /posts/:title/
-texture:
-  title: Heston Snodgrass
-  tagline: Coder, SysAd, DevOps, and some InfoSec
-  date_format: "%b %-d, %Y"
-  social_links:
-    github: hsnodgrass
-    linkedIn: in/hsnodgrass/
-  style:
-    - black
-  showPicker: false
-  showNav: false
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
+disqus:
+  comments: false
+
+permalink: /posts/:title/
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+      breadcrumb:
+        -
+          label: Posts
+          url: /
+  -
+    scope:
+      path: _drafts
+    values:
+      comments: false
+  -
+    scope:
+      path: index.html
+    values:
+      breadcrumb:
+        -
+          label: Posts
+  -
+    scope:
+      path: tags
+    values:
+      breadcrumb:
+        -
+          label: Home
+          url: /
+        -
+          label: Tags
+          url: /tabs/tags/
+  -
+    scope:
+      path: categories
+    values:
+      breadcrumb:
+        -
+          label: Home
+          url: /
+        -
+          label: Categories
+          url: /tabs/categories/
+  -
+    scope:
+      path: ''
+      type: tabs
+    values:
+      layout: page
+      dynamic_title: true
+      breadcrumb:
+        -
+          label: Home
+          url: /
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - jekyll-theme-chirpy.gemspec
+  - tools
+  - docs
+  - README.md
+  - LICENSE
+  - gulpfile.js
+  - node_modules
+  - package.json
+  - package-lock.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
