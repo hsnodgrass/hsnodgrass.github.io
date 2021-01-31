@@ -14,7 +14,7 @@ group :jekyll_plugins do
 end
 
 group :test do
-  gem "htmlproofer", "~> 3.18"
+  gem "html-proofer", "~> 3.18"
 end
 
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
