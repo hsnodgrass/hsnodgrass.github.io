@@ -5,9 +5,7 @@ date: 2021-01-30 17:00:00 -0700
 catagories: ruby IPv4 IPv6 linux
 ---
 
-# Converting Hex Strings to IP Addresses with Ruby
-
-## The Code
+## TL;DR
 
 ```ruby
 # Decode a hex string representation of an IPv4 address
@@ -66,11 +64,11 @@ Wait, what does the `N` mean? That's the template we're using to convert the int
 four sections in the binary string. Matches up nicely with the four *octets*, or 8-bit sequences,
 that make up an IPv4 address.
 
-**NOTE** We should technically use `N` as the template because that means 32-bit unsigned,
-big-endian integer which is, according to my layman's knowlege, what IPv4 addresses are
-supposed to use. However, on my CentOS 7 VM, using `N` as the template rendered the IP
-addresses backwards when decoding them, so I used `L`, which is 32-bit unsigned, native-endian
-integer and made the operating system decide, which worked.
+> **NOTE** We should technically use `N` as the template because that means 32-bit unsigned,
+> big-endian integer which is, according to my layman's knowlege, what IPv4 addresses are
+> supposed to use. However, on my CentOS 7 VM, using `N` as the template rendered the IP
+> addresses backwards when decoding them, so I used `L`, which is 32-bit unsigned, native-endian
+> integer and made the operating system decide, which worked.
 
 Now we need to get that binary string into a more palatable form. Fortunately, the `C` template string
 means 8-bit unsigned integer which is exactly what we need for the octets in the IP:
@@ -80,8 +78,7 @@ ip_octets = ip_bin.unpack('CCCC') # => [192, 168, 0, 1]
 ip_addr = ip_octets.join('.') # => "192.168.0.1"
 
 # Putting it all together
-
 ip_addr = ["C0A80001".to_i(16)].pack('N').unpack('CCCC').join('.') # => "192.168.0.1"
 ```
 
-*While writing this article, I found [this converted](https://www.vultr.com/resources/ipv4-converter/) for the examples which makes a good bookmark.*
+*While writing this post, I found [this converter](https://www.vultr.com/resources/ipv4-converter/) for the examples which makes a good bookmark.*
