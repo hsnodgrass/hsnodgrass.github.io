@@ -5,10 +5,10 @@ description: >
   Personal site for Heston Snodgrass. I enjoy coding, systems
   administration, the DevOps, site reliability, information
   security, and some normal stuff too.
+show_excerpts: true
 baseurl: "/"
 url: "https://hsnodgrass.github.io"
 github_username: hsnodgrass
-show_excerpts: true
 lsi: false
 safe: true
 source: .
@@ -28,7 +28,7 @@ texture:
   date_format: "%b %-d, %Y"
   social_links:
     github: hsnodgrass
-    linkedIn: in/hsnodgrass
+    linkedIn: in/hsnodgrass/
   style:
     - black
   showPicker: false
