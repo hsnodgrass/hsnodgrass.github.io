@@ -8,6 +8,7 @@ description: >
 baseurl: "/"
 url: "https://hsnodgrass.github.io"
 github_username: hsnodgrass
+show_excerpts: true
 lsi: false
 safe: true
 source: .
@@ -27,7 +28,7 @@ texture:
   date_format: "%b %-d, %Y"
   social_links:
     github: hsnodgrass
-    linkedin: in/hsnodgrass
+    linkedIn: in/hsnodgrass
   style:
     - black
   showPicker: false
