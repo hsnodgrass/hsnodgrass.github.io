@@ -1,5 +1,5 @@
 ---
-title: Converting Hex Strings to IP Addresses with Ruby
+title: Automatic TLS with Let's Encrypt and HAProxy
 author: Heston Snodgrass
 date: 2021-02-01 16:45:00 -0700
 catagories: [SystemsAdministration]
